@@ -1,4 +1,4 @@
-#  Transcriptomics-Based Screening for Pharmacological Treatments to Defer Agin
+#  Transcriptomics-Based Screening for Pharmacological Treatments to Defer Aging
 
 
 This project aims to reproduce treatment-screening procedure developed by Georges Janssens et al. {cite}`janssens2019transcriptomics`. 
@@ -25,6 +25,8 @@ Authors found several candidate treatments and specifically discuss some of them
 
 ## Materials and methods
 
+All data processing was performed using R v.4.2.3 with tidyverse v.2.0.0 and python v.3.11.6 with pandas v.2.1.2.
+
 **GTEx dataset preprocessing**
 
 Age-stratified RNA-seq data (GTEx dataset) was downloaded from the [GTEx portal](https://gtexportal.org/home/downloads/adult-gtex/overview) ("[Bulk tissue expression](https://gtexportal.org/home/downloads/adult-gtex/bulk_tissue_expression)" section). We used already preprocessed gene [RPKM data](https://storage.cloud.google.com/adult-gtex/bulk-gex/v6p/rna-seq/GTEx_Analysis_v6p_RNA-seq_RNA-SeQCv1.1.8_gene_rpkm.gct.gz) from the  GTEx Analysis V6p release. We also obtained metadata description from the "[Metadata](https://gtexportal.org/home/downloads/adult-gtex/metadata)" section (GTEx Analysis V6p Sample Attributes and Subject Phenotypes). Both annotation files were joined on sample IDs to get combined metadata. Samples were annotated as "young" for ages 20-59 years old and "old" for 60-69 years old.
@@ -40,17 +42,7 @@ Connectivity (CMap) dataset was kindly provided by Dmitrii Kriukov. Control grou
 
 **Transcriptom-based treatment selection**
 
-Transcriptom-based treatment selection using machine learning was performed in R v.4.2.3 with
-
-caret v.
-
-randomForest v.
-
-ROCR v.
-
-tidyverse v.
-
-matrixStats v.
+Transcriptom-based treatment selection using machine learning was performed in R v.4.2.3 with caret v.6.0-94, randomForest v.4.7-1.1, ROCR v.1.0-11, tidyverse v.2.0.0, matrixStats v.1.2.0
 
 Firstly, we built RandomForest model to predict age category ("young" / "old") based on the preprocessed GTEx transcriptomics data. We built different models for different tissues and selected those with AUC score greater then 0.75 (based on 10-fold cross-validation). 
 
@@ -196,7 +188,7 @@ Among the isolated molecules, most of them are already used drugs in one or anot
 ```{figure} images/lergo_structure.jpg
 
 ---
-width: 50%
+width: 30%
 name: lergo_structure
 --- 
  The chemical structure of the L-ergothioneine, red oval higlights the functional group {cite}`apparoo2022ergothioneine`.
