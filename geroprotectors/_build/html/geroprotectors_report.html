@@ -413,7 +413,7 @@ document.write(`
 <p><strong>CMap dataset preprocessing</strong></p>
 <p>Connectivity (CMap) dataset was kindly provided by Dmitrii Kriukov. Control group of CMap dataset was aggregated by cell type to compute cell-wise means. After that we computed log2(Fold Change) values for each treatment with respect to the corresponding cell-wise control.</p>
 <p><strong>Transcriptom-based treatment selection</strong></p>
-<p>Transcriptom-based treatment selection using machine learning was performed in R v.4.2.3 with caret v.6.0-94, randomForest v.4.7-1.1, ROCR v.1.0-11, tidyverse v.2.0.0, matrixStats v.1.2.0</p>
+<p>Transcriptom-based treatment selection using machine learning was performed in R v.4.2.3 with caret v.6.0-94, randomForest v.4.7-1.1, ROCR v.1.0-11, tidyverse v.2.0.0, matrixStats v.1.2.0.</p>
 <p>Firstly, we built RandomForest model to predict age category (“young” / “old”) based on the preprocessed GTEx transcriptomics data. We built different models for different tissues and selected those with AUC score greater then 0.75 (based on 10-fold cross-validation).</p>
 <p>Secondly, we used selected models to find geroproctive treatments. We obtained “middle-aged” transcriptome by averaging “young” and “old” GTEx data. Then we multiplied this “middle-aged” values by the corresping fold changes from the CMap dataset, wich resulted us “drug-induced” transcriptome. Then we made age predictions based on our drug-indiced transcriptome and selected those for which “young”-age probability was higher then for the “old”-ade. We also calculated geroprotective index (GI) by normalization and centering probabilities of “young” age class (PY):</p>
 <div class="math notranslate nohighlight">
