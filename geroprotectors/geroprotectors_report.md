@@ -185,10 +185,10 @@ Among the isolated molecules, most of them are already used drugs in one or anot
 ### L-ergothioneine anti-aging treatment
 
 
-```{figure} images/lergo_structure.jpg
+```{figure} images/lergo_structure.png
 
 ---
-width: 100px
+width: 30%
 name: lergo_structure
 --- 
  The chemical structure of the L-ergothioneine, red oval higlights the functional group {cite}`apparoo2022ergothioneine`.
