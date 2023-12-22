@@ -75,7 +75,7 @@ We built 5 transcriptome-based age prediction models for each of the selected or
 Only 11 compounds were found to show geroprotective results: olanzapine, XL-888, ritonavir, thioguanine, L-ergothioneine, nafamostat , ochratoxin-a, etofylline-clofibrate, tebipenem , E-2012, EMF-sumo1-7. Among them, **thioguanine showed the most geroprotective index (0.0815)**, and the olanzapine, XL-888, ritonavir had the secong highest GI (0.0740). L-ergothioneine had the third highest GI (0.0670), but we see this molecule as the most promising as it was present in the results of several analyses. 
 
 <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}he chemical struc
 .tg td{border-bottom-width:1px;border-color:black;border-style:solid;border-top-width:1px;border-width:0px;
   font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{border-bottom-width:1px;border-color:black;border-style:solid;border-top-width:1px;border-width:0px;
@@ -196,7 +196,7 @@ Among the isolated molecules, most of them are already used drugs in one or anot
 ```{figure} images/lergo_structure.jpg
 
 ---
-scale: 50%
+scale: 10%
 name: lergo_structure
 --- 
  The chemical structure of the L-ergothioneine, red oval higlights the functional group {cite}`apparoo2022ergothioneine`.
