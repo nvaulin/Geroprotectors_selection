@@ -196,7 +196,7 @@ Among the isolated molecules, most of them are already used drugs in one or anot
 ```{figure} images/lergo_structure.jpg
 
 ---
-scale: 60%
+scale: 50%
 name: lergo_structure
 --- 
  The chemical structure of the L-ergothioneine, red oval higlights the functional group {cite}`apparoo2022ergothioneine`.

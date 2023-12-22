@@ -397,7 +397,7 @@ document.write(`
 </ol>
 <p>The key idea is to find treatments that lead to a “younger” transcriptome.</p>
 <figure class="align-default" id="analysis-schema">
-<img alt="_images/analysis_schema.png" src="_images/analysis_schema.png" />
+<a class="reference internal image-reference" href="_images/analysis_schema.png"><img alt="_images/analysis_schema.png" src="_images/analysis_schema.png" style="width: 1370.7px; height: 650.7px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">The overall schema of transcriptome-based treatments selections</span><a class="headerlink" href="#analysis-schema" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -406,14 +406,18 @@ document.write(`
 </section>
 <section id="materials-and-methods">
 <h2>Materials and methods<a class="headerlink" href="#materials-and-methods" title="Permalink to this heading">#</a></h2>
-<p>All the preprocessing steps were done using python 3.11 with pandas v.2.1.2 and R 4.2.3 with tidyverse v.2.0.0.</p>
 <p><strong>GTEx dataset preprocessing</strong></p>
 <p>Age-stratified RNA-seq data (GTEx dataset) was downloaded from the <a class="reference external" href="https://gtexportal.org/home/downloads/adult-gtex/overview">GTEx portal</a> (”<a class="reference external" href="https://gtexportal.org/home/downloads/adult-gtex/bulk_tissue_expression">Bulk tissue expression</a>” section). We used already preprocessed gene <a class="reference external" href="https://storage.cloud.google.com/adult-gtex/bulk-gex/v6p/rna-seq/GTEx_Analysis_v6p_RNA-seq_RNA-SeQCv1.1.8_gene_rpkm.gct.gz">RPKM data</a> from the  GTEx Analysis V6p release. We also obtained metadata description from the “<a class="reference external" href="https://gtexportal.org/home/downloads/adult-gtex/metadata">Metadata</a>” section (GTEx Analysis V6p Sample Attributes and Subject Phenotypes). Both annotation files were joined on sample IDs to get combined metadata. Samples were annotated as “young” for ages 20-59 years old and “old” for 60-69 years old.</p>
 <p>Based on the metadata, GTEx dataset was divided into several parts based on tissue, age and gender parameters. For the further analysis only brain, heart, kidney, liver and stomach data was selected in order to reduce computational time. Also, for all of the subsets, we retained only transcripts present in both GTEx and CMap datasets (based on the transcript IDs). We also revomed low abundant transcripts with RPKM values less than 0.1 in at least 80% of samples. Additional filtering was applied to keep transcripts with RNA integrity number greater or equal to 6. Resulting transcripts were added a pseudocount and log2-transformed. Then we performed differential expression analysis between “young” and “old” samples. Only differentialy expressed transcripts with <em>p-value</em> less then 0.01 were selected for the further analysis.</p>
 <p><strong>CMap dataset preprocessing</strong></p>
 <p>Connectivity (CMap) dataset was kindly provided by Dmitrii Kriukov. Control group of CMap dataset was aggregated by cell type to compute cell-wise means. After that we computed log2(Fold Change) values for each treatment with respect to the corresponding cell-wise control.</p>
 <p><strong>Transcriptom-based treatment selection</strong></p>
-<p>Transcriptom-based treatment selection using machine learning was performed in R v.4.2.3 with caret v.6.0-94, randomForest v.4.7-1.1, ROCR v.1.0-11, tidyverse v.2.0.0, matrixStats v.1.2.0.</p>
+<p>Transcriptom-based treatment selection using machine learning was performed in R v.4.2.3 with</p>
+<p>caret v.</p>
+<p>randomForest v.</p>
+<p>ROCR v.</p>
+<p>tidyverse v.</p>
+<p>matrixStats v.</p>
 <p>Firstly, we built RandomForest model to predict age category (“young” / “old”) based on the preprocessed GTEx transcriptomics data. We built different models for different tissues and selected those with AUC score greater then 0.75 (based on 10-fold cross-validation).</p>
 <p>Secondly, we used selected models to find geroproctive treatments. We obtained “middle-aged” transcriptome by averaging “young” and “old” GTEx data. Then we multiplied this “middle-aged” values by the corresping fold changes from the CMap dataset, wich resulted us “drug-induced” transcriptome. Then we made age predictions based on our drug-indiced transcriptome and selected those for which “young”-age probability was higher then for the “old”-ade. We also calculated geroprotective index (GI) by normalization and centering probabilities of “young” age class (PY):</p>
 <div class="math notranslate nohighlight">
@@ -542,15 +546,15 @@ document.write(`
 </section>
 <section id="l-ergothioneine-anti-aging-treatment">
 <h3>L-ergothioneine anti-aging treatment<a class="headerlink" href="#l-ergothioneine-anti-aging-treatment" title="Permalink to this heading">#</a></h3>
-<figure class="align-default" id="lergo-structure">
+<figure class="align-default" id="id17">
 <img alt="_images/lergo_structure.jpg" src="_images/lergo_structure.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">The chemical structure of the L-ergothioneine, red oval higlights the functional group <span id="id3">[<a class="reference internal" href="#id14" title="Yasaaswini Apparoo, Chia Wei Phan, Umah Rani Kuppusamy, and Vikneswary Sabaratnam. Ergothioneine and its prospects as an anti-ageing compound. Experimental Gerontology, 170:111982, 2022.">1</a>]</span>.</span><a class="headerlink" href="#lergo-structure" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">The chemical structure of the L-ergothioneine, red oval higlights the functional group <span id="id3">[<a class="reference internal" href="#id14" title="Yasaaswini Apparoo, Chia Wei Phan, Umah Rani Kuppusamy, and Vikneswary Sabaratnam. Ergothioneine and its prospects as an anti-ageing compound. Experimental Gerontology, 170:111982, 2022.">1</a>]</span>.</span><a class="headerlink" href="#id17" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>L-ergothioneine  is a histigine-derivative aminoacid with sulphur group on the imidazole ring. This sulphur can be found in the oxidised and reduced forms, which defines it’s function. L-ergothioneine was proposed to have protection function against reactive oxygen species <span id="id4">[<a class="reference internal" href="#id14" title="Yasaaswini Apparoo, Chia Wei Phan, Umah Rani Kuppusamy, and Vikneswary Sabaratnam. Ergothioneine and its prospects as an anti-ageing compound. Experimental Gerontology, 170:111982, 2022.">1</a>, <a class="reference internal" href="#id12" title="Irwin K Cheah, Lei Feng, Richard MY Tang, Keith HC Lim, and Barry Halliwell. Ergothioneine levels in an elderly population decrease with age and incidence of cognitive decline; a risk factor for neurodegeneration? Biochemical and Biophysical Research Communications, 478(1):162–167, 2016.">2</a>, <a class="reference internal" href="#id13" title="Li Chen, Liping Zhang, Xujun Ye, Zixin Deng, and Changming Zhao. Ergothioneine and its congeners: anti-ageing mechanisms and pharmacophore biosynthesis. Protein &amp; Cell, pages pwad048, 2023.">3</a>, <a class="reference internal" href="#id15" title="BD Paul and SH Snyder. The unusual amino acid l-ergothioneine is a physiologic cytoprotectant. Cell Death &amp; Differentiation, 17(7):1134–1140, 2010.">5</a>]</span>. Paul et al. using HeLa cells lines showed that L-ergothioneine increases cells viability against <span class="math notranslate nohighlight">\(H_2O_2\)</span> <span id="id5">[<a class="reference internal" href="#id15" title="BD Paul and SH Snyder. The unusual amino acid l-ergothioneine is a physiologic cytoprotectant. Cell Death &amp; Differentiation, 17(7):1134–1140, 2010.">5</a>]</span>. Therefore, it may be involved in responses to oxidative stress originating from mitochondrial activity, ultraviolet radiation, etc.</p>
 <figure class="align-default" id="lergo-aging-hallmarks">
-<img alt="_images/lergo_aging_hallmarks.jpeg" src="_images/lergo_aging_hallmarks.jpeg" />
+<a class="reference internal image-reference" href="_images/lergo_aging_hallmarks.jpeg"><img alt="_images/lergo_aging_hallmarks.jpeg" src="_images/lergo_aging_hallmarks.jpeg" style="width: 3200.0px; height: 2036.8000000000002px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 5 </span><span class="caption-text">L-ergothioneine in the network of the hallmarks of aging <span id="id6">[<a class="reference internal" href="#id13" title="Li Chen, Liping Zhang, Xujun Ye, Zixin Deng, and Changming Zhao. Ergothioneine and its congeners: anti-ageing mechanisms and pharmacophore biosynthesis. Protein &amp; Cell, pages pwad048, 2023.">3</a>]</span>.</span><a class="headerlink" href="#lergo-aging-hallmarks" title="Permalink to this image">#</a></p>
 </figcaption>
@@ -562,9 +566,9 @@ document.write(`
 <h3>Clarification of discrepancies with the findings in the article<a class="headerlink" href="#clarification-of-discrepancies-with-the-findings-in-the-article" title="Permalink to this heading">#</a></h3>
 <p>An important issue we would like to address in this discussion is to analyse possible differences with the results in the original paper (see figure below). The first important remark is that among the 11 compounds we found, there are no overlaps with the authors’ results. However, for example, we were able to find other Hsp90 inhibitors, and the mechanism of Hsp90 inhibition is one of the key topics of discussion of potential geroprotectors in the article. Although, the following reasons for the differences can be pointed out:</p>
 <figure class="align-default" id="orig-results">
-<img alt="_images/orig_results.jpg" src="_images/orig_results.jpg" />
+<a class="reference internal image-reference" href="_images/orig_results.jpg"><img alt="_images/orig_results.jpg" src="_images/orig_results.jpg" style="width: 2366.4px; height: 1267.2px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Anti-aging treatments identified by Janssens et al. (E). The picter is taken from the original paper <span id="id9">[<a class="reference internal" href="#id11" title="Georges E Janssens, Xin-Xuan Lin, Lluis Millan-Arino, Alan Kavšek, Ilke Sen, Renée I Seinstra, Nicholas Stroustrup, Ellen AA Nollen, and Christian G Riedel. Transcriptomics-based screening identifies pharmacological inhibition of hsp90 as a means to defer aging. Cell Reports, 27(2):467–480, 2019.">4</a>]</span>.</span><a class="headerlink" href="#orig-results" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Anti-aging treatments identified by Janssens et al. (E). The picture is taken from the original paper <span id="id9">[<a class="reference internal" href="#id11" title="Georges E Janssens, Xin-Xuan Lin, Lluis Millan-Arino, Alan Kavšek, Ilke Sen, Renée I Seinstra, Nicholas Stroustrup, Ellen AA Nollen, and Christian G Riedel. Transcriptomics-based screening identifies pharmacological inhibition of hsp90 as a means to defer aging. Cell Reports, 27(2):467–480, 2019.">4</a>]</span>.</span><a class="headerlink" href="#orig-results" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
