@@ -1,4 +1,4 @@
-#  Transcriptomics-Based Screening for Pharmacological Treatments to Defer Aging
+#  Transcriptomics-Based Screening for Pharmacological Treatments to Defer Agin
 
 
 This project aims to reproduce treatment-screening procedure developed by Georges Janssens et al. {cite}`janssens2019transcriptomics`. 

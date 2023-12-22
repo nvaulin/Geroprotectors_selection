@@ -14,7 +14,7 @@ The key idea is to find treatments that lead to a "younger" transcriptome.
 
 ```{figure} images/analysis_schema.png
 ---
-scale: 90%
+width: 90%
 name: analysis_schema
 ---
 The overall schema of transcriptome-based treatments selections
@@ -196,7 +196,7 @@ Among the isolated molecules, most of them are already used drugs in one or anot
 ```{figure} images/lergo_structure.jpg
 
 ---
-scale: 10%
+width: 50%
 name: lergo_structure
 --- 
  The chemical structure of the L-ergothioneine, red oval higlights the functional group {cite}`apparoo2022ergothioneine`.
@@ -207,7 +207,7 @@ L-ergothioneine  is a histigine-derivative aminoacid with sulphur group on the i
 
 ```{figure} images/lergo_aging_hallmarks.jpeg
 ---
-scale: 80%
+width: 80%
 name: lergo_aging_hallmarks
 ---
  L-ergothioneine in the network of the hallmarks of aging {cite}`chen2023ergothioneine`.
@@ -225,7 +225,7 @@ An important issue we would like to address in this discussion is to analyse pos
 
 ```{figure} images/orig_results.jpg
 ---
-scale: 80%
+width: 80%
 name: orig_results
 ---
 Anti-aging treatments identified by Janssens et al. (E). The picture is taken from the original paper {cite}`janssens2019transcriptomics`.
