@@ -13,7 +13,10 @@ Aging is associated human morbidity and mortality and there are no way to revert
 The key idea is to find treatments that lead to a "younger" transcriptome.
 
 ```{figure} images/analysis_schema.png
-:name: analysis_schema
+---
+scale: 90%
+name: analysis_schema
+---
 The overall schema of transcriptome-based treatments selections
 ```
 
@@ -21,8 +24,6 @@ The overall schema of transcriptome-based treatments selections
 Authors found several candidate treatments and specifically discuss some of them. For instance, they hightlight tanespimycin and monodren involved in Hsp90 inhibition pathways. Hsp90 inhibition was discussed as a process that may be a potential target in developing anti-aging interventions. Janssens et al. also performend *in vivo* experiments in *C. elegans* that support their findings. 
 
 ## Materials and methods
-
-All the preprocessing steps were done using python 3.11 with pandas v.2.1.2 and R 4.2.3 with tidyverse v.2.0.0. 
 
 **GTEx dataset preprocessing**
 
@@ -39,7 +40,17 @@ Connectivity (CMap) dataset was kindly provided by Dmitrii Kriukov. Control grou
 
 **Transcriptom-based treatment selection**
 
-Transcriptom-based treatment selection using machine learning was performed in R v.4.2.3 with caret v.6.0-94, randomForest v.4.7-1.1, ROCR v.1.0-11, tidyverse v.2.0.0, matrixStats v.1.2.0.
+Transcriptom-based treatment selection using machine learning was performed in R v.4.2.3 with
+
+caret v.
+
+randomForest v.
+
+ROCR v.
+
+tidyverse v.
+
+matrixStats v.
 
 Firstly, we built RandomForest model to predict age category ("young" / "old") based on the preprocessed GTEx transcriptomics data. We built different models for different tissues and selected those with AUC score greater then 0.75 (based on 10-fold cross-validation). 
 
@@ -183,7 +194,11 @@ Among the isolated molecules, most of them are already used drugs in one or anot
 
 
 ```{figure} images/lergo_structure.jpg
-:name: lergo_structure
+
+---
+scale: 60%
+name: lergo_structure
+--- 
  The chemical structure of the L-ergothioneine, red oval higlights the functional group {cite}`apparoo2022ergothioneine`.
 ```
 
@@ -191,7 +206,10 @@ L-ergothioneine  is a histigine-derivative aminoacid with sulphur group on the i
 
 
 ```{figure} images/lergo_aging_hallmarks.jpeg
-:name: lergo_aging_hallmarks
+---
+scale: 80%
+name: lergo_aging_hallmarks
+---
  L-ergothioneine in the network of the hallmarks of aging {cite}`chen2023ergothioneine`.
 ```
 
@@ -206,8 +224,11 @@ An important issue we would like to address in this discussion is to analyse pos
 
 
 ```{figure} images/orig_results.jpg
-:name: orig_results
-Anti-aging treatments identified by Janssens et al. (E). The picter is taken from the original paper {cite}`janssens2019transcriptomics`.
+---
+scale: 80%
+name: orig_results
+---
+Anti-aging treatments identified by Janssens et al. (E). The picture is taken from the original paper {cite}`janssens2019transcriptomics`.
 ```
 
 - We used reduced data to save time. We selected some organs and ran a sample of 100 treatments (out of 3546 total) on them. We also ran our analysis for all treatments, but only for the brain.
